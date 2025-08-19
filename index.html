@@ -91,12 +91,10 @@ Whether it’s feedback, a missing restaurant, or an idea to make this page bett
 
   <script>
 
-  // Get current date and time
   var now = new Date();
-  var datetime = now.toLocaleString();
+  var dateOnly = now.toLocaleDateString();
 
-  // Insert date and time into HTML
-  document.getElementById("datetime").innerHTML = datetime;
+  document.getElementById("datetime").innerHTML = dateOnly; 
 
     // Fetch the menu JSON file and display it
     fetch('jedlo.json')
