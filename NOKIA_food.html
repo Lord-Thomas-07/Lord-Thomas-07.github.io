@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="refresh" content="3600">
+  <meta http-equiv="refresh" content="360">
   <title>NOKIA_food</title>
   <style>
     body {
@@ -15,9 +15,17 @@
       margin: 0;
       font-size: 20px;
       background-image: url("foooooood.png");
-    
     }
-  
+    .container {
+    margin-top: 40px;
+      background: white;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 1890px;
+      width: 100%;
+    }
     .menu-columns {
   display: flex;
   justify-content: space-between;
@@ -44,11 +52,136 @@
   </style>
 </head>
 <body>
-  <video width="2920" autoplay muted loop>
-  <source src="mergednokia.mp4" type="video/mp4">
+    
+  <div class="container">
+    <!---<img src="Nokia-Logo.png" alt="NOKIA" width="200" />--->
+    <div class="menu-columns">
+  <div class="menu-column">
+    
+    <h2 style="color:rgb(234, 195, 23)">Presto</h2>
+    <ul id="menu-list"></ul>
   
-Your browser does not support the video tag.
-</video>  
   
+    
+    <h2 style="color:rgb(101, 192, 22)">Lunch Break</h2>
+    <ul id="menu-list5"></ul>
+
+    
+  </div>
+  <div class="menu-column">
+    <h2 style="color:rgb(55, 115, 3)">Food Garden Pressburg</h2>
+    <ul id="menu-list3"></ul>
+    <br><br>
+    <img src="Nokia-Logo.png" alt="NOKIA" width="350" />
+  </div>
+  <div class="menu-column">
+<!--    <h2 style="color:rgb(215, 194, 7)">LANOGI GURMAN</h2>
+<ul id="menu-list4"></ul>-->
+    <h2 style="color:rgb(252, 141, 13)">Veg Life</h2>
+    <ul id="menu-list2"></ul>
+    </div>
+  </div>
+  <!---<img src="trex2.gif" alt="Running T-rex" style="width:600px">--->
+</div>
+    
+
+  </div>
+
+  <script>
+
+
+
+    // Fetch the menu JSON file and display it
+    fetch('jedlo.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Could not load menu data');
+        }
+        return response.json();
+      })
+      .then(menuItems => {
+        const menuList = document.getElementById('menu-list');
+        menuItems.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          menuList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading menu:', error);
+      });
+    fetch('jedlo2.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Could not load menu data');
+        }
+        return response.json();
+      })
+      .then(menuItems => {
+        const menuList = document.getElementById('menu-list2');
+        menuItems.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          menuList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading menu:', error);
+      });
+    fetch('jedlo3.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Could not load menu data');
+        }
+        return response.json();
+      })
+      .then(menuItems => {
+        const menuList = document.getElementById('menu-list3');
+        menuItems.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          menuList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading menu:', error);
+      });
+    fetch('jedlo4.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Could not load menu data');
+        }
+        return response.json();
+      })
+      .then(menuItems => {
+        const menuList = document.getElementById('menu-list4');
+        menuItems.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          menuList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading menu:', error);
+      });
+    fetch('jedlo5.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Could not load menu data');
+        }
+        return response.json();
+      })
+      .then(menuItems => {
+        const menuList = document.getElementById('menu-list5');
+        menuItems.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          menuList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading menu:', error);
+      });
+  </script>
 </body>
 </html>
