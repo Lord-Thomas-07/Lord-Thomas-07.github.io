@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="refresh" content="100">
+  <title>NOKIA_food</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      font-size: 20px;
+      background-image: url("foooooood.png");
+      background-color: #34a4da;
+    }
+    .container {
+    margin-top: 40px;
+      background: white;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 1890px;
+      width: 100%;
+      min-height: 950px;
+    }
+    .menu-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.menu-column {
+  flex: 1;
+}
+
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      text-align: left;
+      margin-right: 30px;
+    }
+    li {
+      padding: 8px 0;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="container">
+    <!---<img src="Nokia-Logo.png" alt="NOKIA" width="200" />--->
+    <div class="menu-columns">
+  <div class="menu-column">
+    
+    <h2 style="color:rgb(234, 195, 23)">Canteen Priatelia</h2>
+    <ul id="menu-list_priatelia"></ul>
+  
+  
+    
+   
+
+    
+  </div>
+  <div class="menu-column">
+    <!--
+    <h2 style="color:rgb(55, 115, 3)">Restaurant Inside</h2>
+    <ul id="menu-list_inside"></ul>-->
+     <h2 style="color:rgb(101, 192, 22)">...</h2>
+    <ul id="menu-list_garden"></ul>
+    <p><strong>Do you have any questions or suggestions?</strong><br>
+Whether it’s feedback, a missing restaurant, or an idea to make this page better — just let me know at <a href="mailto:tomas.halamicek@nokia.com">tomas.halamicek@nokia.com</a>.
+</p>
+    <p>If you're connected to NOKIA-BYOD, you can access mobile version of this webpage by scanning this QR code:</p>
+    <img src="QRcodeNokia.png" alt="QR_code" width="200"/>
+    <p>Or you can access the page on GitHub:</p>
+    <img src="frame.png" alt="QR_code" width="200"/>
+  </div>
+  
+  <div class="menu-column">
+    
+    <h2 style="color:rgb(216, 162, 0)">Šestka</h2>
+    <ul id="menu-list_6"></ul>
+  <!--
+    <h2 style="color:rgb(252, 141, 13)">Alaturka</h2>
+    <ul id="menu-list_turka"></ul>
+    </div>
+  -->
+      <img src="Nokia-Logo.png" alt="NOKIA" width="350" />
+  <br><br><br><br><br><br><br>_
+  </div> 
+  <!---<img src="trex2.gif" alt="Running T-rex" style="width:600px">--->
+</div>
+    
+
+  </div>
+
+  <script>
+
+
+
+    // Fetch the menu JSON file and display it
+    fetch('jedlo_priatelia.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Could not load menu data');
+        }
+        return response.json();
+      })
+      .then(menuItems => {
+        const menuList = document.getElementById('menu-list_priatelia');
+        menuItems.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          menuList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading menu:', error);
+      });
+      
+    fetch('jedlo_6.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Could not load menu data');
+        }
+        return response.json();
+      })
+      .then(menuItems => {
+        const menuList = document.getElementById('menu-list_6');
+        menuItems.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          menuList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading menu:', error);
+      });
+      /*
+    fetch('jedlo_inside.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Could not load menu data');
+        }
+        return response.json();
+      })
+      .then(menuItems => {
+        const menuList = document.getElementById('menu-list_inside');
+        menuItems.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          menuList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading menu:', error);
+      });
+    fetch('jedlo_bamboo.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Could not load menu data');
+        }
+        return response.json();
+      })
+      .then(menuItems => {
+        const menuList = document.getElementById('menu-list_bamboo');
+        menuItems.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          menuList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading menu:', error);
+      });
+    
+    fetch('jedlo_turka.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Could not load menu data');
+        }
+        return response.json();
+      })
+      .then(menuItems => {
+        const menuList = document.getElementById('menu-list_turka');
+        menuItems.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          menuList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading menu:', error);
+      });
+      */
+  </script>
+</body>
+</html>
